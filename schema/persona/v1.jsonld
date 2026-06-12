@@ -1,0 +1,52 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "id": "@id",
+    "type": "@type",
+    "PersonaCredential": {
+      "@id": "https://lingjing-persona.org/schema/persona/v1#PersonaCredential",
+      "@context": {
+        "persona": {
+          "@id": "https://lingjing-persona.org/schema/persona/v1#persona",
+          "@context": {
+            "competence": {
+              "@id": "https://lingjing-persona.org/schema/persona/v1#competence",
+              "@context": {
+                "logicalReasoning": "https://lingjing-persona.org/schema/persona/v1#logicalReasoning",
+                "proceduralToolMastery": "https://lingjing-persona.org/schema/persona/v1#proceduralToolMastery"
+              }
+            },
+            "health": {
+              "@id": "https://lingjing-persona.org/schema/persona/v1#health",
+              "@context": {
+                "fatigueIndex": "https://lingjing-persona.org/schema/persona/v1#fatigueIndex",
+                "sleepQualityObservation": "https://lingjing-persona.org/schema/persona/v1#sleepQualityObservation"
+              }
+            },
+            "psycho": {
+              "@id": "https://lingjing-persona.org/schema/persona/v1#psycho",
+              "@context": {
+                "openness": "https://lingjing-persona.org/schema/persona/v1#openness",
+                "extraversion": "https://lingjing-persona.org/schema/persona/v1#extraversion"
+              }
+            },
+            "behavior": {
+              "@id": "https://lingjing-persona.org/schema/persona/v1#behavior",
+              "@context": {
+                "toolUseFrequency": "https://lingjing-persona.org/schema/persona/v1#toolUseFrequency",
+                "lastSignalTime": "https://lingjing-persona.org/schema/persona/v1#lastSignalTime"
+              }
+            },
+            "social": {
+              "@id": "https://lingjing-persona.org/schema/persona/v1#social",
+              "@context": {
+                "teamworkIndex": "https://lingjing-persona.org/schema/persona/v1#teamworkIndex"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
