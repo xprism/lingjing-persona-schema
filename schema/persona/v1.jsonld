@@ -7,6 +7,8 @@
     "PersonaCredential": {
       "@id": "https://schema.lingjing-persona.org/schema/persona/v1#PersonaCredential",
       "@context": {
+        "role": "https://schema.lingjing-persona.org/schema/persona/v1#role",
+        "tenantId": "https://schema.lingjing-persona.org/schema/persona/v1#tenantId",
         "persona": {
           "@id": "https://schema.lingjing-persona.org/schema/persona/v1#persona",
           "@context": {
