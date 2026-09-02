@@ -1,0 +1,6 @@
+# schema/ 的字节被下游验证方按 URL 解析并可能按 sha256 校验。
+# Git for Windows 默认 core.autocrlf=true，checkout 会把它转成 CRLF。锁死。
+* text=auto eol=lf
+schema/** text eol=lf
+*.png binary
+*.jpg binary

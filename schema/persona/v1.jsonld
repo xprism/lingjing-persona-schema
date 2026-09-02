@@ -1,0 +1,84 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "id": "@id",
+    "type": "@type",
+    "PersonaCredential": {
+      "@id": "https://schema.lingjing-persona.org/schema/persona/v1#PersonaCredential",
+      "@context": {
+        "role": "https://schema.lingjing-persona.org/schema/persona/v1#role",
+        "tenantId": "https://schema.lingjing-persona.org/schema/persona/v1#tenantId",
+        "persona": {
+          "@id": "https://schema.lingjing-persona.org/schema/persona/v1#persona",
+          "@context": {
+            "competence": {
+              "@id": "https://schema.lingjing-persona.org/schema/persona/v1#competence",
+              "@context": {
+                "logicalReasoning": "https://schema.lingjing-persona.org/schema/persona/v1#logicalReasoning",
+                "proceduralToolMastery": "https://schema.lingjing-persona.org/schema/persona/v1#proceduralToolMastery",
+                "skillTreeNodes": "https://schema.lingjing-persona.org/schema/persona/v1#skillTreeNodes"
+              }
+            },
+            "health": {
+              "@id": "https://schema.lingjing-persona.org/schema/persona/v1#health",
+              "@context": {
+                "fatigueIndex": "https://schema.lingjing-persona.org/schema/persona/v1#fatigueIndex",
+                "sleepQualityObservation": "https://schema.lingjing-persona.org/schema/persona/v1#sleepQualityObservation",
+                "rawFhirObservations": "https://schema.lingjing-persona.org/schema/persona/v1#rawFhirObservations"
+              }
+            },
+            "psycho": {
+              "@id": "https://schema.lingjing-persona.org/schema/persona/v1#psycho",
+              "@context": {
+                "openness": "https://schema.lingjing-persona.org/schema/persona/v1#openness",
+                "extraversion": "https://schema.lingjing-persona.org/schema/persona/v1#extraversion",
+                "reflectionLevel": "https://schema.lingjing-persona.org/schema/persona/v1#reflectionLevel"
+              }
+            },
+            "behavior": {
+              "@id": "https://schema.lingjing-persona.org/schema/persona/v1#behavior",
+              "@context": {
+                "toolUseFrequency": "https://schema.lingjing-persona.org/schema/persona/v1#toolUseFrequency",
+                "lastSignalTime": "https://schema.lingjing-persona.org/schema/persona/v1#lastSignalTime",
+                "totalActiveSeconds": "https://schema.lingjing-persona.org/schema/persona/v1#totalActiveSeconds"
+              }
+            },
+            "social": {
+              "@id": "https://schema.lingjing-persona.org/schema/persona/v1#social",
+              "@context": {
+                "teamworkIndex": "https://schema.lingjing-persona.org/schema/persona/v1#teamworkIndex",
+                "leadershipScore": "https://schema.lingjing-persona.org/schema/persona/v1#leadershipScore"
+              }
+            },
+            "wellbeing": {
+              "@id": "https://schema.lingjing-persona.org/schema/persona/v1#wellbeing",
+              "@context": {
+                "emotionalState": "https://schema.lingjing-persona.org/schema/persona/v1#emotionalState",
+                "stressIndex": "https://schema.lingjing-persona.org/schema/persona/v1#stressIndex",
+                "wellbeingSignals": "https://schema.lingjing-persona.org/schema/persona/v1#wellbeingSignals"
+              }
+            },
+            "support": {
+              "@id": "https://schema.lingjing-persona.org/schema/persona/v1#support",
+              "@context": {
+                "interventionHints": "https://schema.lingjing-persona.org/schema/persona/v1#interventionHints",
+                "accommodationPlans": "https://schema.lingjing-persona.org/schema/persona/v1#accommodationPlans",
+                "evaluationSummary": "https://schema.lingjing-persona.org/schema/persona/v1#evaluationSummary"
+              }
+            },
+            "affiliation": {
+              "@id": "https://schema.lingjing-persona.org/schema/persona/v1#affiliation",
+              "@context": {
+                "institutionId": "https://schema.lingjing-persona.org/schema/persona/v1#institutionId",
+                "organizationRole": "https://schema.lingjing-persona.org/schema/persona/v1#organizationRole",
+                "cohortId": "https://schema.lingjing-persona.org/schema/persona/v1#cohortId",
+                "membershipStatus": "https://schema.lingjing-persona.org/schema/persona/v1#membershipStatus"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
