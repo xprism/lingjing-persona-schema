@@ -11,6 +11,15 @@ can resolve them by URL.
 | v1 | https://schema.lingjing-persona.org/schema/persona/v1.jsonld | **Frozen.** Existing v1 credentials verify against it. |
 | v2 | https://schema.lingjing-persona.org/schema/persona/v2.jsonld | Current. Newly issued credentials point here. |
 
+## Before you trust a credential
+
+Read **[VERIFYING.md](VERIFYING.md)** first. Publishing this context makes the
+*shape* of a credential interoperable; it does not make the credential
+*trustworthy*. The issuer's DID document is not published yet, so credentials
+from `did:web:schema.lingjing-persona.org` **cannot currently be verified by
+anyone**, and a credential whose `proof.jws` is the literal
+`mock-signature-payload` is unsigned whatever its `proof.type` says.
+
 ## What changed in v2
 
 The vocabulary is unchanged — v2 is v1 with the IRI base rebased from
