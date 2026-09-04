@@ -3,24 +3,36 @@
 Read this before accepting any credential that names
 `did:web:schema.lingjing-persona.org` as its issuer.
 
-## Current status: credentials from this issuer are NOT yet verifiable
+## Current status: the trust anchor is published
 
 `did:web:schema.lingjing-persona.org` resolves, per the did:web method, to
 
     https://schema.lingjing-persona.org/.well-known/did.json
 
-**That document does not exist yet** (HTTP 404 as of 2026-09-02). Without it
-there is no published key material, so no conforming verifier can check the
-signature on any credential this issuer has produced.
+**That document is now published** (2026-09-04). It carries one verification
+method, `#kms-persona-issuer-vc-signing-1`, whose `publicKeyJwk` is a P-256
+public key. Verify `proof.jws` against it with ES256 — the signature is a raw
+DER ECDSA signature over `JSON.stringify(credential)` with `proof` removed,
+base64url-encoded without padding.
 
-Until that document is published:
+The private half lives in Google Cloud KMS at HSM protection level and cannot be
+exported by anyone, including this issuer.
 
-> **Do not accept a Lingjing Persona credential as evidence of anything.**
-> Treat the payload as unauthenticated, self-reported data.
+Before 2026-09-04 that document returned 404 and nothing from this issuer could
+be verified by anyone. If you hold a credential from that period, it is unsigned
+or carries the sentinel described below; treat it accordingly.
 
-Publishing the JSON-LD context (which you are reading) makes the *shape* of a
-credential interoperable. It does not make the credential *trustworthy* — those
-are two separate things, and only the first is done.
+### This does not mean every credential from this issuer is trustworthy
+
+Two separate things: publishing the JSON-LD context makes a credential's *shape*
+interoperable, and publishing the DID document makes a *signature* checkable.
+Neither makes an unsigned payload true.
+
+> **A credential without a verifying `proof` is unauthenticated, self-reported
+> data.** It may be perfectly honest data; it is not an attestation. Reject it
+> as evidence.
+
+The value of the published anchor is that you can now tell the two apart.
 
 ## Two shapes you must reject
 
@@ -78,12 +90,20 @@ Versioning a breaking change must not invalidate already-issued data, so both
 contexts stay resolvable and conforming verifiers should accept either. But the
 v1 subject identifier is a name, not a key — in both versions.
 
-## What has to happen before this page can say something different
+## Where this stands
 
-1. Publish `/.well-known/did.json` with the issuer's public key material.
-2. Issue with a real signer (key custody on the issuing side).
-3. Account for credentials already handed out with the sentinel `jws`, and
-   re-issue them if they were relied upon.
+1. **Publish `/.well-known/did.json` with the issuer's public key material.**
+   Done, 2026-09-04. HSM-held P-256 key; the document is derived from the key
+   rather than written by hand, so it cannot silently disagree with it.
+2. **Issue with a real signer.** Key custody is on the issuing side, in KMS.
+   Whether any given deployment has signing switched on is visible in the
+   credential itself: a `proof` block that verifies, or no `proof` at all.
+   This issuer does not fabricate one when it cannot sign.
+3. **Account for credentials handed out earlier with the sentinel `jws`.**
+   Not done. Anything issued before 2026-09-04 is unverifiable by construction —
+   the anchor did not exist. If you relied on such a credential, ask for a
+   re-issued one and check that it verifies.
 
-Until all three are done, the honest answer to "can I trust this credential" is
-**no**, and this page will keep saying so.
+So the honest answer to "can I trust this credential" is now: **check the
+signature.** That is what changed. If there is no signature to check, the answer
+is still no.

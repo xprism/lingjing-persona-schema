@@ -2,12 +2,14 @@
   "files": {
     ".gitattributes": "3e57fbdba5e54c238a68a0f83d3ee439d15fd15e0ce4fd739a1688a93580158e",
     ".nojekyll": "ba01e58117df40dcd3d311a164cae16731bc88d9214ff3efd1c3629741f141aa",
+    ".well-known/did.json": "98e592bb14d76e870fd852d90531c6b788260c4f2c2c78a220bf8acddaa2bc97",
     "CNAME": "e8775c0da90d3ada3b402ed2677667cad6625387f4595af867f2b851f8923606",
     "LICENSE": "49bd76e82f2b4f241c02c6b3998ba8e979db2fb0479bddff341b94ed699f22d3",
     "Persona Data Exchange Standardization (W3C VC & JSON-LD Integration).md": "6182217994cdc6e9bc30d96e75024063db7b015b3315229fcce8b2dc606dd36e",
     "README.md": "79500c01e9fbd078f5c6d8de7494767ca661d8a6f6bf5ed42b09492cd2de3ed9",
-    "VERIFYING.md": "59239dff83b686060de950acfeb2b50889de2669832330703856e1b5f7fe2eeb",
+    "VERIFYING.md": "e8a72191d7c032aaf82da6300436a5552661815bbf43cc035766ab050e898f27",
     "W3C Verifiable Presentation (VP) Support.md": "5b9789a4d228be3545b5dea393d11702bc97331ef311584889cda5ee1f6026e2",
+    "index.html": "424e7b0670411f474c975988a19c1f11e6a86f0dcaa46b14ee6b06fba0de5a6d",
     "schema/persona/v1.jsonld": "6a7bc372b3e6d86490d6f0db197052f0fd47278e0c7194b1db8ab979f68c49d2",
     "schema/persona/v2.jsonld": "93466bab9477800f3c96b1b6a0e3e46719e5681674b627d566cd982731ac5230"
   }

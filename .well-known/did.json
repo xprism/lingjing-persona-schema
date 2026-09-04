@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/did/v1",
+    "https://w3id.org/security/suites/jws-2020/v1"
+  ],
+  "assertionMethod": [
+    "did:web:schema.lingjing-persona.org#kms-persona-issuer-vc-signing-1"
+  ],
+  "id": "did:web:schema.lingjing-persona.org",
+  "verificationMethod": [
+    {
+      "controller": "did:web:schema.lingjing-persona.org",
+      "id": "did:web:schema.lingjing-persona.org#kms-persona-issuer-vc-signing-1",
+      "publicKeyJwk": {
+        "alg": "ES256",
+        "crv": "P-256",
+        "kty": "EC",
+        "x": "LN5R2taLsm7QqG7ibzrfqvKECAM9A7ipngqY8FXbR2o",
+        "y": "UPIE0nnxpnvqtI77TrnIbfeVhe5ojPqgFFjur2pSVtQ"
+      },
+      "type": "JsonWebKey2020"
+    }
+  ]
+}
